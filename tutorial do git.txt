@@ -1,0 +1,224 @@
+SITE MUITO UTIL
+https://woliveiras.com.br/posts/comandos-mais-utilizados-no-git/
+https://rogerdudler.github.io/git-guide/index.pt_BR.html
+
+Obrigatorias
+Configurar o nome:
+git config --global user.name "DIGITE SEU NOME"
+
+Configurar o email:
+git config --global user.email "DIGITE SEU EMAIL"
+
+**CRIANDO ARQUIVOS E ENVIANDO AO REPOSITORIO
+
+novo  repositorio:
+git init
+
+USAR cd PARA ENTRAR EM PASTA
+
+para entrar em uma pasta:
+cd <pasta>
+
+para entrar na pasta git:
+cd git
+
+para SAIR da pasta:
+cd ..
+
+
+para entrar na pasta local:
+git local
+
+
+para acessar uma pasta mais longa:
+cd EXEMPLO C:\Users\ildos\.git
+
+para limpar tudo o que ja foi escrito:
+clear
+
+para saber o status do arquivo:
+git status
+
+GIT ADD COMANDO PARA PODER EDITAR ARQUIVOS NO GIT:
+
+para que consiga controlar o arquivo no GIT:
+git add <nomedoarquivo>
+
+para selecionar todos os arquvos de uma mesma familia PDF,txt,DOCX,exe,...
+git add *.<familiadosarquivos>
+
+para selecionar todos os arquivos do diretorio:
+git add .
+
+para enviar seu projeto ao repositorio:
+git commit -m "ESCREVA COMO QUER QUE SEJA RECONHECIDO SEU COMMIT"
+
+para enviar direto ao repositorio sem passar pela S.A:
+git commit -a -m "NOME DO SEU COMMIT"
+
+PARA SABER ALTERAÇÕES FEITAS EM ARQUIVOS UTILIZAMOS GIT DIFF
+
+**GIT PARA SABER OS HISTORICOS DE ALTERAÇÕES NOS ARQUIVOS
+
+para saber alteração feita dentro de um arquivo:
+git diff
+
+para saber o que foi alterado e esta na S.A:
+git diff --staged
+
+UTILIZA GIT LOG PARA PODERMOR ENCONTRAR AS CHAVES PARA QUE POSSAMOS VOLTAR EM UMA VERSÃO ANTERIOR
+
+para saber todos os logs de todos os commits feitos no projeto:
+git log
+
+para saber mais sobre as alterações foram feitas nos commits:
+git log -p
+
+para limitar as informações mostrando so alguns commits, so mostrando os resultados necessarios:
+git log -p -1
+
+para acessar a interface grafica do GIT:
+gitk
+
+**PARA PEGAR UM CODIGO PRONTO NO GITHUB
+
+PARA PODEMOR PEGAR ALGO DO REPOSITORIO:
+git clone <link>
+
+**SITUAÇÕES DE REVERÇÃO DE ARQUIVOS E REAPROVEITAMENTO DE COMMITS E ERROS
+
+para saber apenas os codigos e mensagens de cada commit:
+git log --pretty=oneline
+
+para reaproveitar um commit sem criar um novo:
+git commit --amend -m "<mesmonomedocommitanterior> (edicao)"
+
+para tirar um arquivo da S.A e retornar a W.S
+git reset HEAD <nomedoarquivo> =
+OBS: PARA CASO DE ATUALIZAÇÃO DO RETORNO A W.S
+git restore --staged <nomedoarquivo>
+
+para descartar mudanças feitas sem querer:
+ATUALIZAÇÃO
+git restore <nomedoarquivo>
+DESATUALIZADO
+git checkout -- <nomedoarquivo> =Arquivo (Copia da STAGING AREA para o WORKING DIRECTORY)
+git reset -- <nomedoarquivo> = Arquivo (Copia do último commit para a STAGING AREA)
+
+para remover arquivos não existentes
+git rm <nomedoarquivo>
+
+** Tags e Branchs
+
+para listar TAGS:
+git tag
+
+para criar uma tag:
+git tag -a <nomedatag> -m "<mensagem>"
+
+para colocar uma tag nas versões antigas de trabalho
+git tag -a <nomedatag> <codigodaversãoantiga> -m "<mensagem>"
+Para isso você ir em opções-editar-marcar do git e copiar o codigo
+lembre-se : git log --pretty=oneline
+
+para saber mais sobre uma tag:
+git show <nomedatag>
+
+para saber mais sobre o que tinha em uma versão anterior ou mais recente(isso volta ao passado ou presente) na tag:
+git checkout <nomedatagversãoanteriorouatual>
+
+para voltar o git ao padrão condição de mestre:
+git checkout master
+
+para deletar uma tag:
+git tag -d <nomedatagexcluir>
+
+para criar branch:
+git branch <nomedebranch>
+
+para transferir os arquivos ao branch feito pelo usuario:
+git checkout <nomedebranch>
+
+para fazer direto o branch novo e colocar arquivos:
+git checkout -b <nomedebranch>
+
+para poder levar a outros branch o que fez ou alterou em outro branch:
+git merge <nomedobranchalteradoosarquivos>
+
+para excluir um branch:
+git branch -d <nomedobranchaserdeletado>
+
+para listar todos os branches existentes:
+GIT BRANCH
+
+** CONFIGURANDO GIT COM REDE LOCAL E MAQUINA REPOSITORIO
+
+NOME DO COMPUTADOR: DESKTOP-L7M7JP1
+
+para compartilhar repositorios:
+git init --bare
+
+para clonar o repositorio para que outros servidores possam trabalhar conosco:
+git clone file:////<nomedocomputador>/<nomedapasta>/<nomedapastadentrodapasta>
+para mudar o nome da pasta do repositorio
+git clone file:////<nomedocomputador>/<nomedapasta>/<nomedapastadentrodapasta> <nomenovodapasta>
+
+para saber o nome do servidor remoto:
+git remote
+
+para enviar ao servidor:
+git push <nomedoservidor>"nome padrão: origin" master
+OBS: Caso de alterações no caso de ja ter enviador ao servidor lembrece de dar commit e enviar novamente ao servidor
+
+Caso seja desenvolvedor 2 para pegar os arquivos no servidor:
+git pull origin master
+
+Caso não enviar todos os dados para o servidor lembrece de ter um branch diferente e dar um comando:
+git fetch origin <nomedobranch>
+
+** GIT PARA GIT HUB
+
+para permitir ao git hub ao acesso a maquina :
+ssh-keygen
+
+acessar id_rsa-pub e copiar todo o codigo, ir em SSH Keys no git hub, dar um nome e colar a key
+
+para clonar um repositorio ou seu:
+git clone <link>
+para trocar o nome do repositorio:
+git clone <link> <nomedorepositorio>
+
+para ir ao repositorio remoto:
+git remote add origin <linkdorepositorioremoto>
+
+para enviar os arquivos ao repositorio remoto:
+git push origin master
+
+para criar um segundo repositorio no mesmo:
+git clone <link> <nomedorepositorio>
+
+para atualizar os arquivos na area:
+git pull origin master
+
+**Para colaborar com outros desenvolvedores
+
+fork:Procedimento para clonar o repositorio para colaborar dentro da sua conta git hub
+Pull request: Envia toda as alterações feitas para que o autor decida as mudanças para o projeto original
+
+clicar em fork e aguardar o redirecionamento do git hub a onde sera direcionado e clonara o repositorio da pessoa no seu para colaborar
+
+para clonar o repositorio de outro:
+git clone <link>
+baixa o arquivo no computador
+
+lembre-se de fazer igual faz para mandar para o git hub um arquivo faz o commit e lala...
+para enviar esses arquivos feitos ou alterados ao autor clicar em pull request e criar
+caso alguem tenha feito e você achou util e só clicar em merge das alterações
+
+
+
+
+
+
+
+
